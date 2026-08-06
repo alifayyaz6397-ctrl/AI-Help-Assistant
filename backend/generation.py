@@ -64,7 +64,7 @@ def create_prompt(chunks, query, history):
     
 def generate_ans(prompt: str):
     answer=ollama.chat(
-        model="qwen2.5:7b",
+        model="qwen2.5:3b",
         messages=[
         {"role": "user", "content": prompt}
         ],
