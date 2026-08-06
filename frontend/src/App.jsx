@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./App.css";
-export const API_URL = import.meta.env.VITE_API_URL;
+export const API_URL = "";
 
 function App() {
   const [query, setQuery] = useState("");
