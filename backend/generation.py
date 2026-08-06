@@ -63,20 +63,20 @@ def create_prompt(chunks, query, history):
     return prompt
     
 def generate_ans(prompt: str):
-    # answer=ollama.chat(
-    #     model="qwen2.5:7b",
-    #     messages=[
-    #     {"role": "user", "content": prompt}
-    #     ],
-    #     keep_alive="1h",
-    # )
-    # return answer["message"]["content"];
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    answer = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
+    answer=ollama.chat(
+        model="qwen2.5:7b",
+        messages=[
+        {"role": "user", "content": prompt}
+        ],
+        keep_alive="1h",
     )
-    return answer.text
+    return answer["message"]["content"];
+    # client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    # answer = client.models.generate_content(
+    #     model="gemini-2.5-flash",
+    #     contents=prompt
+    # )
+    # return answer.text
     
     
 class QueryRequest(BaseModel):
